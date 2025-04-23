@@ -15,15 +15,15 @@ const AddPost = ({ onAddPost, onClose, initialData, onEditPost, nextId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newPost = {
-      id: initialData?.id || nextId, // If editing, retain the original ID
+      id: initialData?.id || nextId,
       title,
       body
     };
 
     if (initialData) {
-      onEditPost(newPost); // If editing, call the edit handler
+      onEditPost(newPost); 
     } else {
-      onAddPost(newPost); // If adding a new post, call the add handler
+      onAddPost(newPost); 
     }
   };
 

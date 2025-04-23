@@ -11,16 +11,16 @@ const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [nextId, setNextId] = useState(101); // Start from ID 101
+  const [nextId, setNextId] = useState(101); 
   const [error, setError] = useState(null);
-  const [editPost, setEditPost] = useState(null); // Track post being edited
+  const [editPost, setEditPost] = useState(null); 
 
   useEffect(() => {
     fetch("https://dummyjson.com/posts?limit=100")
       .then((res) => res.json())
       .then((data) => {
         setData(data.posts);
-        setNextId(data.posts.length + 1); // Set the next ID after the last post's ID
+        setNextId(data.posts.length + 1); 
         setIsLoading(false); 
       })
       .catch((err) => {
@@ -32,31 +32,29 @@ const HomePage = () => {
 
   const handleAddPost = (newPost) => {
     setData([newPost, ...data]);
-    setNextId(nextId + 1); // Increment nextId for future posts
+    setNextId(nextId + 1); 
     setShowForm(false); 
   };
 
   const handleEditPost = (updatedPost) => {
-    // Make sure the ID stays the same when editing a post
+
     const updatedData = data.map(post =>
       post.id === updatedPost.id ? updatedPost : post
     );
     setData(updatedData);
     setShowForm(false); 
-    setEditPost(null); // Reset editPost after submission
+    setEditPost(null); 
   };
 
   if (isLoading) {
     return <LoadingSpinner />;
-  }
+  };
 
   return (
     <div className="homepage">
       <Header title="Posts"/>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-      
-      {error && <div className="error-message">{error}</div>} {/* Display error message */}
-      
+          {error && <div className="error-message">{error}</div>} 
       <ul className="post-container">
         {showForm && (
           <div className="overlay">
@@ -64,8 +62,8 @@ const HomePage = () => {
               onAddPost={handleAddPost} 
               onClose={() => setShowForm(false)} 
               nextId={nextId} 
-              initialData={editPost} // Pass initial data to form for editing
-              onEditPost={handleEditPost} // Handle post edit
+              initialData={editPost} 
+              onEditPost={handleEditPost}
             />
           </div>
         )}
@@ -82,7 +80,7 @@ const HomePage = () => {
                   className="editButton" 
                   onClick={() => {
                     setShowForm(true);
-                    setEditPost(post); // Set the post data to be edited
+                    setEditPost(post);
                   }}
                 >
                   Edit

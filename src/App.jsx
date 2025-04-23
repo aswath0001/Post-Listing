@@ -13,6 +13,7 @@ const App = () => {
            <Route path = '/posts/:id' element={<DetailsPage/>}/>
         </Routes>
          </BrowserRouter>
+         
         </>
     )
 }

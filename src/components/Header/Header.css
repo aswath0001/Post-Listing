@@ -8,3 +8,11 @@
    position: sticky;
    top: 10px;
 }
+@media (max-width: 600px) {
+    .header {
+      font-size: 24px;
+      padding: 8px 0;
+      top: 0;
+      border-radius: 0;
+    }
+  }

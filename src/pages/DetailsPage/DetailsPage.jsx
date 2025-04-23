@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import Header from '../../components/Header/Header';
-import "./DetailsPage.css"
+import "./DetailsPage.css";
 
 const DetailsPage = () => {
 
@@ -22,7 +22,7 @@ useEffect(() => {
   
   if (isLoading) {
     return <LoadingSpinner />;  
-  }
+  };
 
   return (
     <div className='detailsPage'>
