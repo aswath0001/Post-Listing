@@ -1,0 +1,16 @@
+.detailsPage {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+}
+ h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #2A3F74;
+}
+h4{
+    color: #E0634c;
+}
+p {
+    font-size: 18px;
+    color: #444;
+}
