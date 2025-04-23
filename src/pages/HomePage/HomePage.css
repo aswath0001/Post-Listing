@@ -1,5 +1,4 @@
 .homepage {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px;
 }
 
@@ -37,7 +36,7 @@
 .post-card a {
     text-decoration: none;
     color: inherit;
-    display: block; /* ensures it fills the card */
+    display: block; 
     height: 100%;
 }
 
